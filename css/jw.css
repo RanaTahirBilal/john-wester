@@ -1,0 +1,102 @@
+/* John A. Wester Jr. : site styles, loaded last so they win the cascade */
+:root{
+  --jw-ink:#14181B;        /* 17.85 on white, 15.85 on cream */
+  --jw-muted:#4C565C;      /*  7.52 on white,  6.67 on cream */
+  --jw-acc:#8C5A1E;        /*  5.84 on white: rules and 24px+ figures only */
+  --jw-acc-ink:#7A4E19;    /*  7.16 on white,  6.36 on cream: small text on light */
+  --jw-acc-lift:#E7A965;   /*  8.72 on ink: small text on dark */
+  --jw-cream:#F4F1EC;
+  --jw-line:#DCD6CC;
+}
+html{scroll-behavior:smooth}
+body.jw{font-family:'Roboto',Arial,sans-serif;color:var(--jw-ink);background:#fff;font-size:17px;line-height:1.7;overflow-x:hidden}
+.jw h1,.jw h2,.jw h3,.jw h4{font-family:'Poppins',Arial,sans-serif;color:var(--jw-ink);letter-spacing:.2px}
+.jw h1{font-size:clamp(34px,5vw,58px);font-weight:600;line-height:1.1}
+.jw h2{font-size:clamp(26px,3.4vw,38px);font-weight:600;margin-bottom:14px}
+.jw h3{font-size:21px;font-weight:600;margin-bottom:8px}
+.jw p{color:var(--jw-muted);margin-bottom:18px}
+.jw a{color:var(--jw-acc-ink)}
+.jw .jw-wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+.jw section{padding:84px 0}
+.jw .jw-eyebrow{font-family:'Poppins',Arial,sans-serif;font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--jw-acc-ink);margin-bottom:10px;display:block}
+
+/* nav */
+.jw-nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,255,255,.96);border-bottom:1px solid var(--jw-line)}
+.jw-nav .jw-wrap{display:flex;align-items:center;justify-content:space-between;min-height:64px;flex-wrap:wrap;gap:8px}
+.jw-brand{font-family:'Poppins',Arial,sans-serif;font-weight:600;font-size:17px;color:var(--jw-ink);text-decoration:none}
+.jw-links{display:flex;gap:22px;flex-wrap:wrap}
+.jw-links a{font-size:15px;color:var(--jw-muted);text-decoration:none}
+.jw-links a:hover,.jw-links a:focus{color:var(--jw-acc-ink);text-decoration:underline}
+
+/* hero */
+.jw-hero{position:relative;display:block;margin-top:64px;min-height:72vh;background:var(--jw-ink) url('../img/02-hero.jpg') center right/cover no-repeat}
+.jw-hero .jw-scrim{position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,16,18,.93) 0%,rgba(13,16,18,.86) 42%,rgba(13,16,18,.25) 72%,rgba(13,16,18,.08) 100%)}
+.jw-hero .jw-wrap{position:relative;z-index:2;padding-top:110px;padding-bottom:110px}
+.jw-hero h1,.jw-hero p,.jw-hero .jw-eyebrow{color:#fff}
+.jw-hero .jw-eyebrow{color:var(--jw-acc-lift)}
+.jw-hero p{max-width:33rem;color:#EDEAE5;font-size:19px}
+.jw-rule{width:72px;height:3px;background:var(--jw-acc);margin:22px 0}
+.jw-hero .jw-rule{background:var(--jw-acc-lift)}
+
+/* generic blocks */
+.jw-grid{display:grid;gap:38px}
+@media(min-width:860px){.jw-two{grid-template-columns:1fr 1fr;align-items:center}}
+.jw-portrait img,.jw-shot img{width:100%;height:auto;display:block;border-radius:2px}
+.jw-cream{background:var(--jw-cream)}
+.jw-facts{display:grid;gap:24px}
+@media(min-width:720px){.jw-facts{grid-template-columns:repeat(3,1fr)}}
+.jw-fact{border-top:3px solid var(--jw-acc);padding-top:14px}
+.jw-fact b{display:block;font-family:'Poppins',Arial,sans-serif;font-size:30px;color:var(--jw-ink);line-height:1.2}
+.jw-fact span{color:var(--jw-muted);font-size:15px}
+
+/* timeline */
+.jw-time{list-style:none;margin:0;padding:0;border-left:2px solid var(--jw-line)}
+.jw-time li{position:relative;padding:0 0 30px 26px}
+.jw-time li::before{content:"";position:absolute;left:-7px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--jw-acc)}
+.jw-time .jw-when{font-family:'Poppins',Arial,sans-serif;font-weight:600;color:var(--jw-acc-ink);font-size:15px;display:block}
+.jw-time p{margin:4px 0 0}
+
+/* lists */
+.jw-list{list-style:none;margin:0;padding:0}
+.jw-list li{padding:10px 0;border-bottom:1px solid var(--jw-line);color:var(--jw-muted)}
+.jw-list li b{color:var(--jw-ink);font-weight:600}
+
+/* dark band */
+.jw-dark{background:var(--jw-ink)}
+.jw-dark h2,.jw-dark h3{color:#fff}
+.jw-dark p{color:#D9D5D0}
+.jw-dark .jw-eyebrow{color:var(--jw-acc-lift)}
+.jw-dark .jw-list li{border-bottom-color:#2B3238;color:#D9D5D0}
+.jw-dark .jw-list li b{color:#fff}
+
+/* gallery */
+.jw-gallery{display:grid;gap:14px;grid-template-columns:1fr}
+@media(min-width:700px){.jw-gallery{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.jw-gallery{grid-template-columns:repeat(3,1fr)}}
+.jw-gallery figure{margin:0}
+.jw-gallery img{width:100%;height:100%;object-fit:cover;display:block;border-radius:2px}
+.jw-note{font-size:15px;color:var(--jw-muted);max-width:52rem;margin-top:22px}
+.jw-dark .jw-note{color:#CFCAC4}
+
+/* contact */
+.jw-form{display:grid;gap:16px}
+@media(min-width:720px){.jw-form .jw-half{grid-column:span 1}.jw-form{grid-template-columns:1fr 1fr}.jw-form .jw-full{grid-column:1 / -1}}
+.jw-form label{font-size:14px;font-weight:600;color:var(--jw-ink);display:block;margin-bottom:6px}
+.jw-form input,.jw-form textarea{width:100%;padding:12px 14px;border:1px solid #B9B2A8;border-radius:2px;background:#fff;color:var(--jw-ink);font-size:16px}
+.jw-form textarea{min-height:150px}
+.jw-btn{display:inline-block;background:var(--jw-acc-ink);color:#fff;font-family:'Poppins',Arial,sans-serif;font-weight:600;font-size:16px;padding:13px 30px;border:0;border-radius:2px;cursor:pointer;text-decoration:none}
+.jw-btn:hover,.jw-btn:focus{background:#63400F;color:#fff}
+
+/* footer */
+.jw-foot{background:var(--jw-ink);color:#CFCAC4;padding:40px 0;font-size:15px}
+.jw-foot a{color:var(--jw-acc-lift)}
+.jw-foot .jw-wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media(max-width:699px){
+  /* the nav wraps to two lines on a phone, so it is let flow instead of being fixed over the hero */
+  .jw-nav{position:static}
+  .jw-nav .jw-wrap{padding-top:10px;padding-bottom:10px}
+  .jw-hero{margin-top:0;min-height:auto;background-position:62% center}
+  .jw-hero .jw-scrim{background:linear-gradient(180deg,rgba(13,16,18,.90) 0%,rgba(13,16,18,.86) 60%,rgba(13,16,18,.88) 100%)}
+  .jw section{padding:58px 0}
+}
